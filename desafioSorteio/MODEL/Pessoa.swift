@@ -11,4 +11,16 @@ import Foundation
 class Pessoa {
     
     var nome = ""
+    
+    init(){
+        
+    }
+    
+    init(nome: String) {
+        self.nome = nome
+    }
+//    func imprimirNome() -> String{
+//        
+//    }
+    
 }

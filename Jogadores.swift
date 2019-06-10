@@ -12,21 +12,18 @@ import UIKit
 class Jogadores: Pessoa {
     
     static var shared = Jogadores()
+
     
-    var participantes: [String] = []
-    var winners: [String] = []
-    var drawn: [String] = []
+    var participantes: [Pessoa] = []
+    var winners: [Pessoa] = []
+    var drawn: [Pessoa] = []
     var nomeSorteio = ""
     var listaSorteio: [String] = []
     
-    func imprimirGanhadores() -> String{
-        let ganhadores = winners.joined(separator: ", ")
-        return ganhadores
-    }
-    
-    func addGrupo(nome: String) {
-        participantes.append(nome)
-    }
+//    func imprimirGanhadores() -> String{
+//        let ganhadores = winners.joined(separator: ", ")
+//        return ganhadores
+//    }
     
     func clearGrupo(){
         winners = []

@@ -111,21 +111,21 @@
                                     <constraint firstItem="Gxq-1z-aUH" firstAttribute="centerY" secondItem="SOc-x2-t17" secondAttribute="centerY" multiplier="0.5" id="zdE-jr-oFU"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q07-r5-1ve">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q07-r5-1ve">
                                 <rect key="frame" x="0.0" y="324.66666666666674" width="375" height="406"/>
                                 <color key="backgroundColor" red="0.34306621549999999" green="0.48615872859999998" blue="0.68630188700000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.34306621549999999" green="0.48615872859999998" blue="0.68630188700000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="8Ca-zr-bXf" customClass="ParticipantesCellTableViewCell" customModule="desafioSorteio" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="70" id="8Ca-zr-bXf" customClass="ParticipantesCellTableViewCell" customModule="desafioSorteio" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Ca-zr-bXf" id="AdJ-Rv-tZl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXb-v7-Cqg">
-                                                    <rect key="frame" x="20" y="0.0" width="335" height="44"/>
+                                                    <rect key="frame" x="20" y="17.333333333333329" width="335" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -133,7 +133,7 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.34306621551513672" green="0.48615872859954834" blue="0.68630188703536987" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstItem="GXb-v7-Cqg" firstAttribute="height" secondItem="AdJ-Rv-tZl" secondAttribute="height" id="AIW-OS-sn8"/>
+                                                <constraint firstItem="GXb-v7-Cqg" firstAttribute="height" secondItem="AdJ-Rv-tZl" secondAttribute="height" multiplier="0.5" id="AIW-OS-sn8"/>
                                                 <constraint firstItem="GXb-v7-Cqg" firstAttribute="centerX" secondItem="AdJ-Rv-tZl" secondAttribute="centerX" id="PTB-A4-aEJ"/>
                                                 <constraint firstItem="GXb-v7-Cqg" firstAttribute="centerY" secondItem="AdJ-Rv-tZl" secondAttribute="centerY" id="nPb-Hy-NxR"/>
                                                 <constraint firstItem="GXb-v7-Cqg" firstAttribute="leading" secondItem="AdJ-Rv-tZl" secondAttribute="leading" constant="20" id="nqY-h8-3BQ"/>

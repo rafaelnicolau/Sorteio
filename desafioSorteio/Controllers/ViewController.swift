@@ -47,10 +47,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if sort.isEmpty{
                 alerta(title: "Atenção", message: "Não pode criar Sorteio sem nome")
                 return
+            }else if Jogadores.shared.listaSorteio.contains(where: {$0.description == sort}){
+                alerta(title: "Atenção", message: "Já existe um Sorteio com esse nome.")
+                return
             }else {
                Jogadores.shared.nomeSorteio = sort
-                lbSorteio.text = sort
+                lbSorteio.text = Jogadores.shared.nomeSorteio
                 btAddPart.isHidden = false
+                tfSorteio.text = ""
             }
         }
     }
@@ -73,30 +77,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if part.isEmpty == true {
                 alerta(title: "Atenção", message: "Não pode incluir participante sem nome.")
                 return
-            }else if Jogadores.shared.participantes.contains (where: {$0.description == part}){
+            }else if Jogadores.shared.participantes.contains (where: {$0.nome == part}){
                 alerta(title: "Atenção", message: "Não pode repetir nome do Participante.")
             }else {
-                Jogadores.shared.participantes.append(part)
+                Jogadores.shared.participantes.append(Pessoa(nome: part))
                 btStart.isHidden = false
             }
             tbList.reloadData()
         }
-        clearPart()
-    }
-    
-    func clearPart(){
         tfParticipantes.text = ""
     }
     
-    func clearSort(){
-        tfSorteio.text = ""
-    }
-    
-    func clearQtSort(){
-        tfQuant.text = ""
-    }
-    
     func clear(){
+        lbSorteio.text = ""
         tfSorteio.text = ""
         tfQuant.text = ""
         tfParticipantes.text = ""
@@ -121,7 +114,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     }
                 }
             }
-            alerta(title: "Ganhadores", message: "\(Jogadores.shared.imprimirGanhadores())")
+            alerta(title: "Ganhadores", message: "\(Jogadores.shared.winners)")
+            Jogadores.shared.listaSorteio.append(Jogadores.shared.nomeSorteio)
+            print(Jogadores.shared.winners)
+            print(Jogadores.shared.listaSorteio)
+            print(Jogadores.shared.nomeSorteio)
             clear()
             tbList.reloadData()
             }
@@ -136,7 +133,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let part = Jogadores.shared.participantes[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ParticipantesCellTableViewCell
-        cell.lbNome.text = part
+        cell.lbNome.text = part.nome
         
         return cell
         
@@ -146,10 +143,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let part = Jogadores.shared.participantes[indexPath.row]
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
-            self.deleteAction(part: part, indexpath: indexPath)
+            self.deleteAction(part: part.nome, indexpath: indexPath)
         }
         let editAction = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
-            self.editAction(part: part, indexpath: indexPath)
+            self.editAction(part: part.nome, indexpath: indexPath)
         }
         
         editAction.backgroundColor = .gray
@@ -167,12 +164,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 if newName.count == 0 {
                     return
                 }
-                if Jogadores.shared.participantes.contains(where: {$0.description == newName}){
+                if Jogadores.shared.participantes.contains(where: {$0.nome == newName}){
                     let alert = UIAlertController(title: "Atenção", message: "Não pode repetir nome do Participante.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true, completion: nil)
                 }
-                Jogadores.shared.participantes[indexpath.row] = newName
+                Jogadores.shared.participantes[indexpath.row].nome = newName
             self.tbList.reloadData()
             } else {
                 return

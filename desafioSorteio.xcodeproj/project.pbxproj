@@ -17,7 +17,6 @@
 		FE42102522A56D6000D8E3F6 /* Jogadores.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42102422A56D6000D8E3F6 /* Jogadores.swift */; };
 		FE42102922A5E77100D8E3F6 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42102822A5E77100D8E3F6 /* HistoryViewController.swift */; };
 		FE42102B22A5E80D00D8E3F6 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42102A22A5E80D00D8E3F6 /* HistoryTableViewCell.swift */; };
-		FE42102D22A5EBCB00D8E3F6 /* Sorteio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42102C22A5EBCB00D8E3F6 /* Sorteio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		FE42102422A56D6000D8E3F6 /* Jogadores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Jogadores.swift; path = ../../Jogadores.swift; sourceTree = "<group>"; };
 		FE42102822A5E77100D8E3F6 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = ../../HistoryViewController.swift; sourceTree = "<group>"; };
 		FE42102A22A5E80D00D8E3F6 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
-		FE42102C22A5EBCB00D8E3F6 /* Sorteio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Sorteio.swift; path = ../Controllers/Sorteio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +91,6 @@
 			children = (
 				FE29B37322AE8A00004E7AE7 /* Pessoa.swift */,
 				FE42102422A56D6000D8E3F6 /* Jogadores.swift */,
-				FE42102C22A5EBCB00D8E3F6 /* Sorteio.swift */,
 			);
 			path = MODEL;
 			sourceTree = "<group>";
@@ -175,7 +172,6 @@
 				FE42102B22A5E80D00D8E3F6 /* HistoryTableViewCell.swift in Sources */,
 				FE06B5D522A1AD76007B7AA2 /* ParticipantesCellTableViewCell.swift in Sources */,
 				FE42102922A5E77100D8E3F6 /* HistoryViewController.swift in Sources */,
-				FE42102D22A5EBCB00D8E3F6 /* Sorteio.swift in Sources */,
 				FE2E537122A0320D007B50A4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
