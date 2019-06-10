@@ -38,11 +38,11 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return Jogadores.shared.winners.count
+        return Jogadores.shared.listWinners[section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let listWinners = Jogadores.shared.winners[indexPath.row].nome
+         let listWinners = Jogadores.shared.listWinners[indexPath.section][indexPath.row].nome
 
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell_hist") as! HistoryTableViewCell
             cell.lbNomeWinner.text = listWinners

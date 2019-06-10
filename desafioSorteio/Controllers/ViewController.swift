@@ -96,6 +96,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         btAddPart.isHidden = true
         btStart.isHidden = true
         Jogadores.shared.participantes = []
+        Jogadores.shared.winners = []
     }
    
     func sorteados(){
@@ -114,16 +115,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     }
                 }
             }
-            alerta(title: "Ganhadores", message: "\(Jogadores.shared.winners)")
+            Jogadores.shared.listWinners.append(Jogadores.shared.winners)
+            alerta(title: "Ganhadores", message: "\(Jogadores.shared.toStringNomes())")
             Jogadores.shared.listaSorteio.append(Jogadores.shared.nomeSorteio)
-            print(Jogadores.shared.winners)
-            print(Jogadores.shared.listaSorteio)
-            print(Jogadores.shared.nomeSorteio)
             clear()
             tbList.reloadData()
             }
         }
-    
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

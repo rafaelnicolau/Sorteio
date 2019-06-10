@@ -17,6 +17,7 @@ class Jogadores: Pessoa {
     var participantes: [Pessoa] = []
     var winners: [Pessoa] = []
     var drawn: [Pessoa] = []
+    var listWinners: [[Pessoa]] = []
     var nomeSorteio = ""
     var listaSorteio: [String] = []
     
@@ -24,6 +25,21 @@ class Jogadores: Pessoa {
 //        let ganhadores = winners.joined(separator: ", ")
 //        return ganhadores
 //    }
+    
+    
+    
+//    func getWinners(name: [Pessoa]) -> String {
+//        for i in 0...name.count - 1 {
+//
+//        }
+//        return name.nome
+//    }
+    
+    func toStringNomes() -> String {
+        let nomesWinners = Jogadores.shared.winners.map({$0.nome})
+        let x = nomesWinners.joined(separator: ", ")
+        return x
+        }
     
     func clearGrupo(){
         winners = []
