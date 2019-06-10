@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "desafioSorteio/Controllers/ViewController.swift"
-            timestampString = "581658043.738587"
+            timestampString = "581866961.562506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "sorteados()"
             landmarkType = "7">
          </BreakpointContent>

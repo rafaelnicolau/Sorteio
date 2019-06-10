@@ -9,26 +9,22 @@
 import Foundation
 import UIKit
 
-class Ganhadores {
+class Jogadores: Pessoa {
     
-    var participants: [String] = []
-    var list: [String] = []
+    var participantes: [String] = []
+    var winners: [String] = []
     var drawn: [String] = []
     
     func imprimirGanhadores() -> String{
-        let ganhadores = list.joined(separator: ", ")
+        let ganhadores = winners.joined(separator: ", ")
         return ganhadores
     }
     
     func addGrupo(nome: String) {
-        participants.append(nome)
+        participantes.append(nome)
     }
     
     func clearGrupo(){
-        list = []
-    }
-    
-    func getWinner() -> [String] {
-        return self.list
+        winners = []
     }
 }

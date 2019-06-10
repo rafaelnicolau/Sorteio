@@ -75,6 +75,13 @@
                                             <action selector="btStart:" destination="CM5-VO-n3H" eventType="touchUpInside" id="H84-eN-Szm"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXV-g5-88Z" userLabel="Add">
+                                        <rect key="frame" x="298" y="97.333333333333329" width="22.666666666666686" height="48.666666666666671"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="btSort:" destination="CM5-VO-n3H" eventType="touchUpInside" id="7O3-EQ-qRL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.34306621549999999" green="0.48615872859999998" blue="0.68630188700000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -86,8 +93,10 @@
                                     <constraint firstItem="JYp-pz-j5v" firstAttribute="height" secondItem="SOc-x2-t17" secondAttribute="height" multiplier="0.05" id="I46-gy-5YQ"/>
                                     <constraint firstItem="Gxq-1z-aUH" firstAttribute="height" secondItem="SOc-x2-t17" secondAttribute="height" multiplier="0.07" id="KUb-5I-e9x"/>
                                     <constraint firstItem="0JL-Fa-fkW" firstAttribute="width" secondItem="SOc-x2-t17" secondAttribute="width" multiplier="0.5" id="Lth-mV-G7P"/>
+                                    <constraint firstItem="MXV-g5-88Z" firstAttribute="centerX" secondItem="SOc-x2-t17" secondAttribute="centerX" multiplier="1.65" id="PcQ-49-UjK"/>
                                     <constraint firstItem="Qgd-dN-Qnk" firstAttribute="height" secondItem="SOc-x2-t17" secondAttribute="height" multiplier="0.07" id="Q88-BK-FPA"/>
                                     <constraint firstItem="JYp-pz-j5v" firstAttribute="width" secondItem="SOc-x2-t17" secondAttribute="width" multiplier="0.2" id="QY7-bH-FLT"/>
+                                    <constraint firstItem="MXV-g5-88Z" firstAttribute="height" secondItem="SOc-x2-t17" secondAttribute="height" multiplier="0.06" id="S6n-Hv-yLA"/>
                                     <constraint firstItem="UeA-Dh-j4R" firstAttribute="centerY" secondItem="SOc-x2-t17" secondAttribute="centerY" multiplier="0.5" id="Vss-vd-mkc"/>
                                     <constraint firstItem="0JL-Fa-fkW" firstAttribute="centerY" secondItem="SOc-x2-t17" secondAttribute="centerY" multiplier="0.7" id="ain-MT-84L"/>
                                     <constraint firstItem="UeA-Dh-j4R" firstAttribute="height" secondItem="SOc-x2-t17" secondAttribute="height" multiplier="0.1" id="bdP-ia-oED"/>
@@ -97,6 +106,8 @@
                                     <constraint firstItem="UeA-Dh-j4R" firstAttribute="width" secondItem="SOc-x2-t17" secondAttribute="width" multiplier="0.1" id="qJp-yq-Jif"/>
                                     <constraint firstItem="JYp-pz-j5v" firstAttribute="centerX" secondItem="SOc-x2-t17" secondAttribute="centerX" multiplier="1.75" id="spJ-SL-OIm"/>
                                     <constraint firstItem="0JL-Fa-fkW" firstAttribute="centerX" secondItem="SOc-x2-t17" secondAttribute="centerX" id="xCs-wL-Z1h"/>
+                                    <constraint firstItem="MXV-g5-88Z" firstAttribute="centerY" secondItem="SOc-x2-t17" secondAttribute="centerY" multiplier="0.3" id="ycB-kT-wwT"/>
+                                    <constraint firstItem="MXV-g5-88Z" firstAttribute="width" secondItem="SOc-x2-t17" secondAttribute="width" multiplier="0.06" id="ycP-A2-rLz"/>
                                     <constraint firstItem="Gxq-1z-aUH" firstAttribute="centerY" secondItem="SOc-x2-t17" secondAttribute="centerY" multiplier="0.5" id="zdE-jr-oFU"/>
                                 </constraints>
                             </view>
@@ -140,15 +151,23 @@
                                     <outlet property="delegate" destination="CM5-VO-n3H" id="xjc-cY-FQh"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJO-Az-PRZ" userLabel="lbSorteio">
+                                <rect key="frame" x="187.66666666666666" y="73" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="q07-r5-1ve" firstAttribute="width" secondItem="SOc-x2-t17" secondAttribute="width" id="1ua-Dk-lN5"/>
                             <constraint firstItem="q07-r5-1ve" firstAttribute="height" secondItem="SOc-x2-t17" secondAttribute="height" multiplier="0.5" id="5px-Kx-K9Q"/>
+                            <constraint firstItem="ZJO-Az-PRZ" firstAttribute="centerY" secondItem="taE-lZ-pxR" secondAttribute="centerY" multiplier="0.18" id="BRA-HJ-mFx"/>
                             <constraint firstItem="SOc-x2-t17" firstAttribute="centerX" secondItem="taE-lZ-pxR" secondAttribute="centerX" id="I3R-4Q-CkJ"/>
                             <constraint firstItem="SOc-x2-t17" firstAttribute="centerY" secondItem="taE-lZ-pxR" secondAttribute="centerY" id="MGX-nR-NPu"/>
                             <constraint firstItem="q07-r5-1ve" firstAttribute="centerY" secondItem="taE-lZ-pxR" secondAttribute="centerY" multiplier="1.3" id="REb-41-vkc"/>
                             <constraint firstItem="SOc-x2-t17" firstAttribute="height" secondItem="taE-lZ-pxR" secondAttribute="height" id="YDo-mI-mv3"/>
+                            <constraint firstItem="ZJO-Az-PRZ" firstAttribute="centerX" secondItem="taE-lZ-pxR" secondAttribute="centerX" id="g7k-NW-OIc"/>
                             <constraint firstItem="q07-r5-1ve" firstAttribute="centerX" secondItem="taE-lZ-pxR" secondAttribute="centerX" id="oKd-GU-Pnu"/>
                             <constraint firstItem="SOc-x2-t17" firstAttribute="width" secondItem="taE-lZ-pxR" secondAttribute="width" id="pCS-it-0d4"/>
                         </constraints>
@@ -156,6 +175,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" springLoaded="YES" systemItem="featured" id="3y1-Oa-k0s"/>
                     <connections>
+                        <outlet property="btAddPart" destination="UeA-Dh-j4R" id="JMx-Hx-yD7"/>
+                        <outlet property="btStart" destination="JYp-pz-j5v" id="WHj-Gl-uYp"/>
+                        <outlet property="lbSorteio" destination="ZJO-Az-PRZ" id="HAd-gq-K6g"/>
                         <outlet property="tbList" destination="q07-r5-1ve" id="XwQ-Ot-cIl"/>
                         <outlet property="tfParticipantes" destination="Gxq-1z-aUH" id="uaL-YP-Lns"/>
                         <outlet property="tfQuant" destination="0JL-Fa-fkW" id="UhM-EN-AGz"/>

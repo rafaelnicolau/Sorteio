@@ -10,17 +10,19 @@ import Foundation
 import UIKit
 
 class Sorteio {
-    var nomeSorteio:[String] = []
-    var list: [String] = []
+    
+    
+    var nomeSorteio = ""
+    var listSorteios: [String] = []
     
     func addSorteio(nome: String) {
         self.nomeSorteio.append(nome)
     }
     
     func addShufflerListSort(nome: String) -> [String]{
-        self.list.append(nome)
-        self.list.shuffle()
-        return list
+        self.listSorteios.append(nome)
+        self.listSorteios.shuffle()
+        return listSorteios
     }
     
 }
