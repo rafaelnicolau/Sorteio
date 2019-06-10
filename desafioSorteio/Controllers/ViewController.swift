@@ -21,8 +21,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var lbSorteio: UILabel!
     
     
-    var sorteio = Sorteio()
-    var players = Jogadores()
     var nomeSort = ""
     
     override func viewDidLoad() {
@@ -50,7 +48,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 alerta(title: "Atenção", message: "Não pode criar Sorteio sem nome")
                 return
             }else {
-                sorteio.nomeSorteio = sort
+               Jogadores.shared.nomeSorteio = sort
                 lbSorteio.text = sort
                 btAddPart.isHidden = false
             }
@@ -75,10 +73,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if part.isEmpty == true {
                 alerta(title: "Atenção", message: "Não pode incluir participante sem nome.")
                 return
-            }else if players.participantes.contains(where: {$0.description == part}){
+            }else if Jogadores.shared.participantes.contains (where: {$0.description == part}){
                 alerta(title: "Atenção", message: "Não pode repetir nome do Participante.")
             }else {
-                players.participantes.append(part)
+                Jogadores.shared.participantes.append(part)
                 btStart.isHidden = false
             }
             tbList.reloadData()
@@ -104,7 +102,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tfParticipantes.text = ""
         btAddPart.isHidden = true
         btStart.isHidden = true
-        players.participantes = []
+        Jogadores.shared.participantes = []
     }
    
     func sorteados(){
@@ -112,18 +110,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if qnt.isEmpty == true {
                 alerta(title: "Atenção", message: "Favor incluir pelo menos um Sorteado.")
                 return
-            } else if players.participantes.count < Int(qnt) ?? 0{
+            } else if Jogadores.shared.participantes.count < Int(qnt) ?? 0{
                 alerta(title: "Atenção", message: "A quantidade de sorteados não pode ser maior que os Participantes.")
                 return
             }else {
-                players.drawn = players.participantes.shuffled()
-                for i in 0...players.drawn.count - 1 {
+                Jogadores.shared.drawn = Jogadores.shared.participantes.shuffled()
+                for i in 0...Jogadores.shared.drawn.count - 1 {
                     if i < Int(qnt)! {
-                       players.winners.append(players.drawn[i])
+                       Jogadores.shared.winners.append(Jogadores.shared.drawn[i])
                     }
                 }
             }
-            alerta(title: "Ganhadores", message: "\(players.imprimirGanhadores())")
+            alerta(title: "Ganhadores", message: "\(Jogadores.shared.imprimirGanhadores())")
             clear()
             tbList.reloadData()
             }
@@ -132,11 +130,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.participantes.count
+        return Jogadores.shared.participantes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let part = players.participantes[indexPath.row]
+        let part = Jogadores.shared.participantes[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ParticipantesCellTableViewCell
         cell.lbNome.text = part
         
@@ -146,7 +144,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
  
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let part = players.participantes[indexPath.row]
+        let part = Jogadores.shared.participantes[indexPath.row]
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
             self.deleteAction(part: part, indexpath: indexPath)
         }
@@ -169,12 +167,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 if newName.count == 0 {
                     return
                 }
-                if self.players.participantes.contains(where: {$0.description == newName}){
+                if Jogadores.shared.participantes.contains(where: {$0.description == newName}){
                     let alert = UIAlertController(title: "Atenção", message: "Não pode repetir nome do Participante.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(alert, animated: true, completion: nil)
                 }
-            self.players.participantes[indexpath.row] = newName
+                Jogadores.shared.participantes[indexpath.row] = newName
             self.tbList.reloadData()
             } else {
                 return
@@ -197,7 +195,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func deleteAction(part: String, indexpath: IndexPath){
         let alert = UIAlertController(title: "Delete", message: "Deseja apagar este participante?", preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: "Sim", style: .default) { (Action) in
-            self.players.participantes.remove(at: indexpath.row)
+            Jogadores.shared.participantes.remove(at: indexpath.row)
             self.tbList.deleteRows(at: [indexpath], with: .automatic)
         }
         let cancelAction = UIAlertAction(title: "Não", style: .default, handler: nil)
@@ -206,10 +204,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         present(alert, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "HistoryViewController") {
-            let vc = segue.destination as! HistoryViewController
-        }
-    }
 }
 

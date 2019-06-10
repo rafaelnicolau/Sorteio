@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+class Pessoa {
+    
+    var nome = ""
+}

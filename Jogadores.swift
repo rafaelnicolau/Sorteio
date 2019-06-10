@@ -11,9 +11,13 @@ import UIKit
 
 class Jogadores: Pessoa {
     
+    static var shared = Jogadores()
+    
     var participantes: [String] = []
     var winners: [String] = []
     var drawn: [String] = []
+    var nomeSorteio = ""
+    var listaSorteio: [String] = []
     
     func imprimirGanhadores() -> String{
         let ganhadores = winners.joined(separator: ", ")

@@ -8,11 +8,12 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController{ //UITableViewDataSource, UITableViewDelegate {
+class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
    
     @IBOutlet weak var tbHist: UITableView!
     @IBOutlet weak var msg: UILabel!
+    
     
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,26 +27,26 @@ class HistoryViewController: UIViewController{ //UITableViewDataSource, UITableV
     func loadData(){
         tbHist.reloadData()
     }
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return History.shared.sections.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return History.shared.sections[section]
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-//        return History.shared.listWinners[section].count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//            let listWinners = History.shared.listWinners[indexPath.section][indexPath.row]
-//
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell_hist") as! HistoryTableViewCell
-//            cell.lbNomeWinner.text = listWinners
-//            return cell
-//
-//    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return Jogadores.shared.listaSorteio.count
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return Jogadores.shared.listaSorteio[section]
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return Jogadores.shared.winners[section].count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let listWinners = Jogadores.shared.winners[indexPath.row]
+
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell_hist") as! HistoryTableViewCell
+            cell.lbNomeWinner.text = listWinners
+            return cell
+
+    }
 }
