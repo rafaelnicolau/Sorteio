@@ -29,23 +29,21 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return Jogadores.shared.listaSorteio.count
+        return Historico.shared.listaSorteios.count
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Jogadores.shared.listaSorteio[section]
+        return Historico.shared.listaSorteios[section].nome
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return Jogadores.shared.listWinners[section].count
+        return Historico.shared.sorteio?.ganhadores.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let listWinners = Jogadores.shared.listWinners[indexPath.section][indexPath.row].nome
-
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell_hist") as! HistoryTableViewCell
-            cell.lbNomeWinner.text = listWinners
-            return cell
+        let listWinners = Historico.shared.sorteio?.ganhadores[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_hist") as! HistoryTableViewCell
+        cell.lbNomeWinner.text = listWinners?.nome
+        return cell
     }
 }

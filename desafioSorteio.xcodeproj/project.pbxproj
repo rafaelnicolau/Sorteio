@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		FE06B5D522A1AD76007B7AA2 /* ParticipantesCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE06B5D422A1AD76007B7AA2 /* ParticipantesCellTableViewCell.swift */; };
 		FE29B37422AE8A00004E7AE7 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29B37322AE8A00004E7AE7 /* Pessoa.swift */; };
+		FE29B37622AFD604004E7AE7 /* Sorteio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29B37522AFD604004E7AE7 /* Sorteio.swift */; };
+		FE29B37822AFD62C004E7AE7 /* Historico.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29B37722AFD62C004E7AE7 /* Historico.swift */; };
 		FE2E537122A0320D007B50A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2E537022A0320D007B50A4 /* AppDelegate.swift */; };
 		FE2E537322A0320D007B50A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2E537222A0320D007B50A4 /* ViewController.swift */; };
 		FE2E537622A0320D007B50A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2E537422A0320D007B50A4 /* Main.storyboard */; };
 		FE2E537822A0320F007B50A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2E537722A0320F007B50A4 /* Assets.xcassets */; };
 		FE2E537B22A0320F007B50A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2E537922A0320F007B50A4 /* LaunchScreen.storyboard */; };
-		FE42102522A56D6000D8E3F6 /* Jogadores.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42102422A56D6000D8E3F6 /* Jogadores.swift */; };
 		FE42102922A5E77100D8E3F6 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42102822A5E77100D8E3F6 /* HistoryViewController.swift */; };
 		FE42102B22A5E80D00D8E3F6 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42102A22A5E80D00D8E3F6 /* HistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -22,6 +23,8 @@
 /* Begin PBXFileReference section */
 		FE06B5D422A1AD76007B7AA2 /* ParticipantesCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantesCellTableViewCell.swift; sourceTree = "<group>"; };
 		FE29B37322AE8A00004E7AE7 /* Pessoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
+		FE29B37522AFD604004E7AE7 /* Sorteio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorteio.swift; sourceTree = "<group>"; };
+		FE29B37722AFD62C004E7AE7 /* Historico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Historico.swift; sourceTree = "<group>"; };
 		FE2E536D22A0320D007B50A4 /* desafioSorteio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafioSorteio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2E537022A0320D007B50A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE2E537222A0320D007B50A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +32,6 @@
 		FE2E537722A0320F007B50A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE2E537A22A0320F007B50A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE2E537C22A0320F007B50A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE42102422A56D6000D8E3F6 /* Jogadores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Jogadores.swift; path = ../../Jogadores.swift; sourceTree = "<group>"; };
 		FE42102822A5E77100D8E3F6 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = ../../HistoryViewController.swift; sourceTree = "<group>"; };
 		FE42102A22A5E80D00D8E3F6 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				FE29B37322AE8A00004E7AE7 /* Pessoa.swift */,
-				FE42102422A56D6000D8E3F6 /* Jogadores.swift */,
+				FE29B37722AFD62C004E7AE7 /* Historico.swift */,
+				FE29B37522AFD604004E7AE7 /* Sorteio.swift */,
 			);
 			path = MODEL;
 			sourceTree = "<group>";
@@ -167,10 +170,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE29B37422AE8A00004E7AE7 /* Pessoa.swift in Sources */,
-				FE42102522A56D6000D8E3F6 /* Jogadores.swift in Sources */,
 				FE2E537322A0320D007B50A4 /* ViewController.swift in Sources */,
 				FE42102B22A5E80D00D8E3F6 /* HistoryTableViewCell.swift in Sources */,
 				FE06B5D522A1AD76007B7AA2 /* ParticipantesCellTableViewCell.swift in Sources */,
+				FE29B37622AFD604004E7AE7 /* Sorteio.swift in Sources */,
+				FE29B37822AFD62C004E7AE7 /* Historico.swift in Sources */,
 				FE42102922A5E77100D8E3F6 /* HistoryViewController.swift in Sources */,
 				FE2E537122A0320D007B50A4 /* AppDelegate.swift in Sources */,
 			);

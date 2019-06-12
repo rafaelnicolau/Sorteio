@@ -9,9 +9,26 @@
 import Foundation
 import UIKit
 
+
+class Sorteio {
+    var nome = ""
+    var participantes = [Pessoa]()
+     var ganhadores = [Pessoa]()
+}
+
+class Pessoa {
+    var nome = ""
+}
+
+class Historico {
+    var sorteios = [Sorteio]()
+}
+
+
+
 class Jogadores: Pessoa {
     
-    static var shared = Jogadores()
+//    static var shared = Jogadores()
 
     
     var participantes: [Pessoa] = []
