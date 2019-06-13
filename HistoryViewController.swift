@@ -21,6 +21,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tbHist.isScrollEnabled = false
         loadData()
     }
     
@@ -37,13 +38,19 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Historico.shared.sorteio?.ganhadores.count ?? 0
+        return Historico.shared.listaSorteios[section].ganhadores.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let listWinners = Historico.shared.sorteio?.ganhadores[indexPath.row]
+        let nameWinner = Historico.shared.listaSorteios[indexPath.section].ganhadores[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_hist") as! HistoryTableViewCell
-        cell.lbNomeWinner.text = listWinners?.nome
+        cell.lbNomeWinner.text = nameWinner.nome
         return cell
     }
+    
+    @IBAction func btLimpar(_ sender: Any) {
+        Historico.shared = Historico()
+        tbHist.reloadData()
+    }
+    
 }

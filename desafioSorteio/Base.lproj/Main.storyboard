@@ -203,7 +203,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fiM-by-Bb7" userLabel="TbHist">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="40.666666666666686" width="375" height="649.66666666666652"/>
                                 <color key="backgroundColor" red="0.34306621549999999" green="0.48615872859999998" blue="0.68630188700000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.34306621549999999" green="0.48615872859999998" blue="0.68630188700000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -243,16 +243,30 @@
                                     <outlet property="delegate" destination="I6R-VT-DuB" id="BOV-zu-edE"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJk-ek-84X">
+                                <rect key="frame" x="93.666666666666671" y="694.33333333333337" width="187.66666666666663" height="32.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="Limpar Histórico">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btLimpar:" destination="I6R-VT-DuB" eventType="touchUpInside" id="vin-Ju-YXY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.34306621549999999" green="0.48615872859999998" blue="0.68630188700000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="fiM-by-Bb7" firstAttribute="height" secondItem="2bu-aD-8e2" secondAttribute="height" id="DvA-hy-BqE"/>
+                            <constraint firstItem="ZJk-ek-84X" firstAttribute="centerX" secondItem="2bu-aD-8e2" secondAttribute="centerX" id="6FF-o9-A1I"/>
+                            <constraint firstItem="fiM-by-Bb7" firstAttribute="height" secondItem="2bu-aD-8e2" secondAttribute="height" multiplier="0.8" id="DvA-hy-BqE"/>
+                            <constraint firstItem="ZJk-ek-84X" firstAttribute="width" secondItem="GMG-17-y4b" secondAttribute="width" multiplier="0.5" id="FAo-qT-LwX"/>
+                            <constraint firstItem="ZJk-ek-84X" firstAttribute="centerY" secondItem="2bu-aD-8e2" secondAttribute="centerY" multiplier="1.75" id="PRq-G8-BLT"/>
                             <constraint firstItem="fiM-by-Bb7" firstAttribute="centerX" secondItem="2bu-aD-8e2" secondAttribute="centerX" id="dUM-IB-7mC"/>
-                            <constraint firstItem="fiM-by-Bb7" firstAttribute="centerY" secondItem="2bu-aD-8e2" secondAttribute="centerY" id="f3w-1r-7u4"/>
+                            <constraint firstItem="fiM-by-Bb7" firstAttribute="centerY" secondItem="2bu-aD-8e2" secondAttribute="centerY" multiplier="0.9" id="f3w-1r-7u4"/>
                             <constraint firstItem="fiM-by-Bb7" firstAttribute="width" secondItem="2bu-aD-8e2" secondAttribute="width" id="fgV-bV-AJ7"/>
                             <constraint firstItem="GMG-17-y4b" firstAttribute="height" secondItem="2bu-aD-8e2" secondAttribute="height" id="iBY-J6-Xtn"/>
                             <constraint firstItem="GMG-17-y4b" firstAttribute="centerX" secondItem="2bu-aD-8e2" secondAttribute="centerX" id="ixC-et-zX7"/>
                             <constraint firstItem="GMG-17-y4b" firstAttribute="width" secondItem="2bu-aD-8e2" secondAttribute="width" id="kqA-NZ-4XD"/>
+                            <constraint firstItem="ZJk-ek-84X" firstAttribute="height" secondItem="GMG-17-y4b" secondAttribute="height" multiplier="0.04" id="nfF-0c-bqf"/>
                             <constraint firstItem="GMG-17-y4b" firstAttribute="centerY" secondItem="2bu-aD-8e2" secondAttribute="centerY" id="uiQ-xg-yUS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="srY-3x-Iht"/>

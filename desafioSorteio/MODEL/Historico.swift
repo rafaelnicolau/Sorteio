@@ -9,9 +9,16 @@
 import Foundation
 
 class Historico {
+//    private init () {}
+    
     
     static var shared = Historico()
     
-    var sorteio: Sorteio?
+
     var listaSorteios: [Sorteio] = []
+    
+//    func addSorteionoArray(sort: Sorteio){
+//        listaSorteios.insert(sort, at: 0)
+//    }
+    
 }

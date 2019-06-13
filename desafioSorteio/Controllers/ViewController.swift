@@ -21,13 +21,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var lbSorteio: UILabel!
     
     var sorteio = Sorteio()
-    var jogadores = Pessoa()
-//    var nomeSort = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         btAddPart.isHidden = true
         btStart.isHidden = true
+        tfParticipantes.isEnabled = false
+        tfQuant.isEnabled = false
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -36,31 +37,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func btAdd(_ sender: Any) {
-        addPart()
+    addPart()
     }
     
     @IBAction func btStart(_ sender: Any) {
-        sorteados()
-        clear()
-        tbList.reloadData()
+    sorteados()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        self.tbList.endEditing(true)
     }
     func addNomeSort(){
         if let sort = tfSorteio.text{
-            if sort.isEmpty{
+            if sort.isEmpty && lbSorteio.text == "" {
                 alerta(title: "Atenção", message: "Não pode criar Sorteio sem nome")
                 return
-            }else if sorteio.participantes.contains(where: {$0.nome == sort}) {
+            }else if Historico.shared.listaSorteios.contains (where: {$0.nome == sort}) {
                 alerta(title: "Atenção", message: "Já existe um Sorteio com esse nome.")
+                tfSorteio.text = ""
                 return
-            }else {
+            }else if sort == "" {
+                return
+            } else {
                sorteio.nome = sort
                 lbSorteio.text = sorteio.nome
                 btAddPart.isHidden = false
                 tfSorteio.text = ""
+                tfParticipantes.isEnabled = true
             }
         }
     }
@@ -68,7 +72,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         tfParticipantes.resignFirstResponder()
         addPart()
-        tfParticipantes.resignFirstResponder()
         return true
     }
     
@@ -88,6 +91,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }else {
                 sorteio.participantes.append(Pessoa(nome: part))
                 btStart.isHidden = false
+                tfQuant.isEnabled = true
             }
             tbList.reloadData()
         }
@@ -101,9 +105,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tfParticipantes.text = ""
         btAddPart.isHidden = true
         btStart.isHidden = true
-        sorteio.participantes = []
-        sorteio.ganhadores = []
-
+        tfParticipantes.isEnabled = false
+        tfQuant.isEnabled = false
+        sorteio = Sorteio()
     }
    
     func sorteados(){
@@ -113,6 +117,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 return
             } else if sorteio.participantes.count < Int(qnt) ?? 0{
                 alerta(title: "Atenção", message: "A quantidade de sorteados não pode ser maior que os Participantes.")
+                tfQuant.text = ""
+                return
+            }
+            if Int(qnt) == 0 || sorteio.participantes.count == 0 {
+                alerta(title: "Atenção", message: "Deve exister pelo menos um ganhador.")
+                tfQuant.text = ""
                 return
             }else {
                 sorteio.participantes.shuffle()
@@ -122,19 +132,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     }
                 }
             }
-            if let sort = lbSorteio.text {
-                sorteio.nome = sort
-            }
-//            var x:[Sorteio] = []
-//            x.append(sorteio)
             Historico.shared.listaSorteios.append(sorteio)
-            Historico.shared.sorteio = sorteio
-            let nomesGanhadores = sorteio.ganhadores.map({$0.nome})
-            nomesGanhadores.joined(separator: ", ")
+//            Historico.shared.sorteio = sorteio
+//            let nomesGanhadores = sorteio.ganhadores.map({$0.nome})
+//            nomesGanhadores.joined(separator: ", ")
             alerta(title: "Ganhadores", message: "\(sorteio.toStringGanhadores())")
             }
+        clear()
+        tbList.reloadData()
         }
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sorteio.participantes.count
